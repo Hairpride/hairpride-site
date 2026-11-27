@@ -296,6 +296,27 @@
     .mid-cta { padding: 1.75rem 1.5rem; }
     .mid-cta a { width: 100%; }
   }
+
+  .hp-video {
+    width: min(100% - 2rem, 760px);
+    margin: clamp(2rem, 6vw, 4rem) auto;
+    text-align: center;
+  }
+  .hp-video h2 {
+    margin: 0 0 1rem;
+    color: var(--gold-light);
+    font: 700 clamp(1.3rem, 3.5vw, 2rem)/1.25 'Cinzel', serif;
+  }
+  .hp-video video {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    border: 1px solid var(--gold-dark);
+    border-radius: .65rem;
+    background: #000;
+  }
 </style>
 </head>
 <body>
@@ -333,6 +354,15 @@
   </div>
 </header>
 
+
+<section class="hp-video" aria-labelledby="hp-video-heading">
+  <h2 id="hp-video-heading">See Hair Pride™ in Action</h2>
+  <video controls playsinline preload="none" width="1280" height="720"
+         aria-labelledby="hp-video-heading" poster="/hair-pride-commercial-poster.webp">
+    <source src="/hair-pride-commercial.mp4" type="video/mp4">
+    <a href="/hair-pride-commercial.mp4">Download the Hair Pride commercial</a>
+  </video>
+</section>
 
 <!-- REASONS -->
 <main class="reasons" id="reasons">
