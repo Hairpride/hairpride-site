@@ -320,6 +320,43 @@
     border-radius: .65rem;
     background: #000;
   }
+  .hp-gift-banner {
+    display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+    align-items: center; position: relative; isolation: isolate; overflow: hidden;
+    max-width: 1120px; margin: clamp(1.5rem, 4vw, 3rem) auto; width: calc(100% - 2rem);
+    border: 1px solid #866330; border-radius: .7rem;
+    background: radial-gradient(ellipse at 20% 0%, #252c20 0, #111713 65%);
+    box-shadow: 0 14px 44px rgba(0,0,0,.24);
+  }
+  .hp-gift-banner::before, .hp-gift-banner::after {
+    content: ""; position: absolute; z-index: 2; width: 9rem; height: 1.45rem;
+    pointer-events: none; background: linear-gradient(#a82d3c,#6b1424 66%,#931e32);
+    border-block: 1px solid #cf5967; box-shadow: 0 2px 7px #0008;
+  }
+  .hp-gift-banner::before { top: .76rem; left: -2.7rem; transform: rotate(-43deg); }
+  .hp-gift-banner::after { top: .76rem; right: -2.7rem; transform: rotate(43deg); }
+  .hp-gift-copy { padding: clamp(1.75rem, 5vw, 3.5rem); }
+  .hp-gift-copy h2 { color: #f8edda; font: 900 clamp(1.6rem,3.8vw,3.2rem)/1.08 'Cinzel',serif; margin: 0 0 .6rem; }
+  .hp-gift-weight { color: var(--gold-light); font-weight: 800; font-size: clamp(1.05rem,2vw,1.35rem); margin: 0 0 1.15rem; }
+  .hp-gift-detail { color: #f1e7d5; font-size: .98rem; line-height: 1.65; margin: 0 0 1.25rem; }
+  .hp-gift-detail strong { color: #fff5e2; }
+  .hp-gift-copy .btn-primary { display: inline-block; padding: .78rem 1.2rem; }
+  .hp-gift-photo { display: block; }
+  .hp-gift-photo img { display: block; width: 100%; height: auto; object-fit: contain; }
+  @media (max-width: 650px) {
+    .hp-gift-banner { grid-template-columns: 1fr; }
+    .hp-gift-copy { padding: 1.65rem 1.35rem; }
+    .hp-gift-photo { order: -1; }
+  }
+
+  .hp-gift-actions { display: flex; align-items: center; flex-wrap: wrap; gap: .65rem; }
+  .hp-gift-shipping { display: block; width: min(100%, 17rem); height: auto; transform: translateY(-.3rem); }
+  .hp-gift-ornaments { position: absolute; top: 0; inset-inline-start: .45rem; display: flex; gap: .45rem; pointer-events: none; z-index: 3; }
+  .hp-gift-ornaments-right { inset-inline-start: auto; inset-inline-end: .45rem; flex-direction: row-reverse; }
+  .hp-gift-ornaments i { display: block; position: relative; width: 1px; height: 3.8rem; background: #d9bb74; }
+  .hp-gift-ornaments i + i { height: 2.5rem; }
+  .hp-gift-ornaments i::after { content: ""; position: absolute; bottom: 0; left: -.31rem; width: .64rem; height: .64rem; border-radius: 50%; border: 1px solid #e2bd74; background: radial-gradient(circle at 35% 25%, #ee8290, #9d223a 58%); }
+  .hp-gift-ornaments i + i::after { background: radial-gradient(circle at 35% 25%, #ffe2a0, #a77733 62%); }
 </style>
 </head>
 <body>
@@ -358,6 +395,24 @@
   </div>
 </header>
 
+
+<section class="hp-gift-banner" aria-labelledby="hp-gift-top">
+  <span class="hp-gift-ornaments hp-gift-ornaments-left" aria-hidden="true"><i></i><i></i></span>
+  <span class="hp-gift-ornaments hp-gift-ornaments-right" aria-hidden="true"><i></i><i></i></span>
+  <div class="hp-gift-copy">
+    <h2 id="hp-gift-top">A Gift for You.<br>A Gift for a Buddy.</h2>
+    <p class="hp-gift-weight">Two massive 184 g jars (6.5 oz each)</p>
+    <p class="hp-gift-detail">Free dual-sided barber comb and gift box with each jar.</p>
+    <div class="hp-gift-actions">
+      <a class="btn-primary" href="https://buy.stripe.com/dRm4gzdmtg7p7wW1hVeQM01">Shop the 2-Jar Bundle</a>
+      <img class="hp-gift-shipping" src="/hair-pride-holiday-shipping-note.webp" alt="Plus Free Shipping for the Holidays">
+    </div>
+  </div>
+  <picture class="hp-gift-photo">
+    <source type="image/webp" srcset="/images/p_set-640.c1b1d703.webp 640w, /images/p_set-960.c2939565.webp 960w" sizes="(max-width: 650px) 100vw, 500px">
+    <img src="/images/p_set.9bda4218.jpg" width="1300" height="729" alt="Hair Pride pomade jar held in hand next to the dual-sided comb and gift box" loading="lazy" decoding="async">
+  </picture>
+</section>
 
 <section class="hp-video" aria-labelledby="hp-video-heading">
   <h2 id="hp-video-heading">See Hair Pride™ in Action</h2>
@@ -460,6 +515,24 @@
   </article>
 
 </main>
+
+<section class="hp-gift-banner" aria-labelledby="hp-gift-bottom">
+  <span class="hp-gift-ornaments hp-gift-ornaments-left" aria-hidden="true"><i></i><i></i></span>
+  <span class="hp-gift-ornaments hp-gift-ornaments-right" aria-hidden="true"><i></i><i></i></span>
+  <div class="hp-gift-copy">
+    <h2 id="hp-gift-bottom">A Gift for You.<br>A Gift for a Buddy.</h2>
+    <p class="hp-gift-weight">Two massive 184 g jars (6.5 oz each)</p>
+    <p class="hp-gift-detail">Free dual-sided barber comb and gift box with each jar.</p>
+    <div class="hp-gift-actions">
+      <a class="btn-primary" href="https://buy.stripe.com/dRm4gzdmtg7p7wW1hVeQM01">Shop the 2-Jar Bundle</a>
+      <img class="hp-gift-shipping" src="/hair-pride-holiday-shipping-note.webp" alt="Plus Free Shipping for the Holidays">
+    </div>
+  </div>
+  <picture class="hp-gift-photo">
+    <source type="image/webp" srcset="/images/p_set-640.c1b1d703.webp 640w, /images/p_set-960.c2939565.webp 960w" sizes="(max-width: 650px) 100vw, 500px">
+    <img src="/images/p_set.9bda4218.jpg" width="1300" height="729" alt="Hair Pride pomade jar held in hand next to the dual-sided comb and gift box" loading="lazy" decoding="async">
+  </picture>
+</section>
 
 <!-- SHOP -->
 <div class="jungle-bg" style="padding:2px 0;">
